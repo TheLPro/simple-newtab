@@ -7,10 +7,13 @@ var popup = document.getElementById('popup');
 var primarycolor = document.getElementById('primarycolor');
 var secondarycolor = document.getElementById('secondarycolor');
 
-form.addEventListener('submit', function(e) {
-    console.log(urlinput.value);
+popup.style.display = 'none';
 
-    window.location.href = "https://www.google.com/search?q="
+form.addEventListener('submit', function (e) {
+  e.preventDefault();
+  console.log(urlinput.value);
 
-    return true;
+  window.location.href = `https://www.google.com/search?q=${urlinput.value}`;
+
+  return true;
 });
