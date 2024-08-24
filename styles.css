@@ -5,13 +5,13 @@
 
 * {
   box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
 }
 
 html {
   margin: 0;
 }
 body {
-  font-family: 'Mulish';
   font-style: normal;
   margin: 0;
   padding: 0;
