@@ -1,21 +1,10 @@
-<<<<<<< HEAD
 html {
     --primary-color: #9b5ec4;
     --secondary-color: #000000;
     margin: 0;
-=======
-:root {
-  --primary-color: #9b5ec4;
-  --secondary-color: #000000;
 }
-
 * {
   box-sizing: border-box;
-}
-
-html {
-  margin: 0;
->>>>>>> refs/remotes/origin/main
 }
 body {
   font-family: 'Mulish';
