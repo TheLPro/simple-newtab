@@ -8,6 +8,8 @@ var popup = document.getElementById('popup');
 var primarycolor = document.getElementById('primarycolor');
 var secondarycolor = document.getElementById('secondarycolor');
 
+var styles = getComputedStyle(document.body);
+
 closepopupbutton.addEventListener('click', function () {
   popup.classList.remove('active');
 });
@@ -36,5 +38,5 @@ form.addEventListener('submit', function (e) {
   return true;
 });
 
-primarycolor.value = document.style.primarycolor;
-secondarycolor.value = document.style.secondarycolor;
+primarycolor.value = styles.getPropertyValue('--primary-color');
+secondarycolor.value = styles.getPropertyValue('--secondary-color');
