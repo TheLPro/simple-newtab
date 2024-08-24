@@ -24,7 +24,7 @@ body[data-theme="light"] {
     display: flex;
     margin: auto;
     height: 35px;
-    margin-top: 40vh;
+    margin-top: 42vh;
     width: 30vw;
     border: 3px solid var(--primary-color);
     border-radius: 100px;
@@ -42,8 +42,10 @@ input#urlinp {
     margin: 0;
     border-radius: 100px;
     padding-left: 10px;
+    background-color: inherit;
+    color: inherit;
 }
-button#searchbtn {
+input#searchbtn {
     width: 35px;
     height: 100%;
     border: none;
@@ -59,4 +61,51 @@ button#searchbtn {
     height: 20px;
     margin: auto;
     fill: var(--secondary-color);
+}
+button#settings {
+    position: fixed;
+    right: 0;
+    bottom: 0;
+    display: flex;
+    padding: 10px;
+    outline: none;
+    border: none;
+    background-color: inherit;
+}
+#settingsimg {
+    fill: var(--primary-color);
+}
+
+    /* Popup */
+
+div#popup {
+    position: fixed;
+    flex-direction: column;
+    display: flex;
+    right: 39vw;
+    top: 20vh;
+    bottom: 10vh;
+    width: 20vw;
+    height: 30vh;
+    background-color: #333;
+    color: white;
+    border: 4px solid var(--primary-color);
+    border-radius: 10px;
+    padding: 5px;
+}
+p.ptitle {
+    font-size: 2em;
+    margin: 0;
+    padding: 0;
+    text-align: center;
+}
+p.psubtitle {
+    font-size: 1em;
+    margin: 0;
+    padding: 0;
+    text-align: center;
+}
+.psetting {
+    display: flex;
+    justify-content: space-between;
 }
