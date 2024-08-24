@@ -3,6 +3,10 @@
   --secondary-color: #000000;
 }
 
+* {
+  box-sizing: border-box;
+}
+
 html {
   margin: 0;
 }
@@ -23,12 +27,13 @@ body[data-theme='light'] {
 .search-bar {
   display: flex;
   margin: auto;
-  height: 35px;
+  height: 50px;
   margin-top: 42vh;
   width: 30vw;
   border: 3px solid var(--primary-color);
   border-radius: 100px;
   padding: 5px;
+  padding-right: 0;
   align-items: center;
   justify-content: center;
 }
@@ -45,16 +50,19 @@ input#urlinp {
   background-color: inherit;
   color: inherit;
 }
-input#searchbtn {
+button#searchbtn {
   all: unset;
-  width: 35px;
-  height: 35px;
-  background-color: var(--primary-color);
-  color: #fff;
-  border-radius: 20px;
+  height: 100%;
+  aspect-ratio: 1;
+  padding: 0.5rem;
+  border-radius: 0 50% 50% 0;
+  /* background: var(--primary-color); */
+  background: transparent;
+  display: grid;
+  place-items: center;
+  color: var(--secondary-color);
+  filter: invert(1);
   cursor: pointer;
-  align-items: center;
-  justify-content: center;
 }
 #searchimg {
   width: 20px;
@@ -80,8 +88,8 @@ button#settings {
 
 div#popup {
   position: fixed;
-  flex-direction: column;
   display: flex;
+  flex-direction: column;
   right: 39vw;
   top: 20vh;
   bottom: 10vh;
@@ -92,6 +100,7 @@ div#popup {
   border: 4px solid var(--primary-color);
   border-radius: 10px;
   padding: 5px;
+  display: none;
 }
 p.ptitle {
   font-size: 2em;
@@ -108,4 +117,19 @@ p.psubtitle {
 .psetting {
   display: flex;
   justify-content: space-between;
+}
+
+#closepopup {
+  all: unset;
+  position: absolute;
+  right: 0.5rem;
+  top: 0.5rem;
+  background: none;
+  color: var(--secondary-color);
+  filter: invert(1);
+  cursor: pointer;
+}
+
+.active {
+  display: block !important;
 }
