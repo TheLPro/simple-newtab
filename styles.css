@@ -1,9 +1,6 @@
-:root {
+html {
     --primary-color: #9b5ec4;
     --secondary-color: #000000;
-}
-
-html {
     margin: 0;
 }
 body {

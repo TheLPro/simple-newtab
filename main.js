@@ -8,9 +8,11 @@ var primarycolor = document.getElementById('primarycolor');
 var secondarycolor = document.getElementById('secondarycolor');
 
 form.addEventListener('submit', function(e) {
-    console.log(urlinput.value);
 
     window.location.href = "https://www.google.com/search?q="
 
     return true;
 });
+
+primarycolor.value = document.style.primarycolor;
+secondarycolor.value = document.style.secondarycolor;
