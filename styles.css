@@ -1,15 +1,11 @@
-:root {
-  --primary-color: #9b5ec4;
-  --secondary-color: #000000;
+html {
+    --primary-color: #9b5ec4;
+    --secondary-color: #000000;
+    margin: 0;
 }
-
 * {
   box-sizing: border-box;
   font-family: 'Poppins', sans-serif;
-}
-
-html {
-  margin: 0;
 }
 body {
   font-style: normal;
