@@ -6,7 +6,7 @@ var closepopupbutton = document.getElementById('closepopup');
 var settings = document.getElementById('settings');
 var popup = document.getElementById('popup');
 var primarycolor = document.getElementById('primarycolor');
-var secondarycolor = document.getElementById('secondarycolor');
+var toggletheme = document.getElementById('toggletheme');
 
 var styles = getComputedStyle(document.body);
 
@@ -20,13 +20,17 @@ window.onload = function () {
     );
     primarycolor.value = localStorage.getItem('primarycolor');
   }
-  if (localStorage.getItem('secondarycolor')) {
-    document.body.style.setProperty(
-      '--secondary-color',
-      localStorage.getItem('secondarycolor'),
-    );
-    secondarycolor.value = localStorage.getItem('secondarycolor');
+  if (localStorage.getItem('theme')) {
+    document.body.setAttribute('data-theme', localStorage.getItem('theme'));
   }
+
+  if (!localStorage.getItem('primarycolor')) {
+    localStorage.setItem('primarycolor', '#000');
+  }
+  if (!localStorage.getItem('theme')) {
+    localStorage.setItem('theme', 'dark');
+  }
+
 };
 
 closepopupbutton.addEventListener('click', function () {
@@ -58,16 +62,21 @@ form.addEventListener('submit', function (e) {
 });
 
 primarycolor.value = styles.getPropertyValue('--primary-color');
-secondarycolor.value = styles.getPropertyValue('--secondary-color');
-
 primarycolor.addEventListener('input', function () {
   console.log(primarycolor.value);
   document.body.style.setProperty('--primary-color', primarycolor.value);
   localStorage.setItem('primarycolor', primarycolor.value);
 });
 
-secondarycolor.addEventListener('input', function () {
-  console.log(secondarycolor.value);
-  document.body.style.setProperty('--secondary-color', secondarycolor.value);
-  localStorage.setItem('secondarycolor', secondarycolor.value);
+toggletheme.addEventListener('click', function () {
+  if (document.body.getAttribute('data-theme') === 'dark') {
+    document.body.setAttribute('data-theme', 'light');
+    localStorage.setItem('theme', 'light');
+    return;
+  }
+  if (document.body.getAttribute('data-theme') === 'light') {
+    document.body.setAttribute('data-theme', 'dark');
+    localStorage.setItem('theme', 'dark');
+    return;
+  }
 });
